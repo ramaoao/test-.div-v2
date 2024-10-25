@@ -165,6 +165,10 @@ function checkingAnswers(event) {
     const selectedCircle = clickedOption.previousElementSibling;
     selectedCircle.classList.add('selected');
 
+    if (selectedAnswer === correctAnswers) {
+        numPoints++
+    }
+
     answerCollection.push({
         question: testData[activeQuestionIdx].question,
         selected: selectedAnswer,
