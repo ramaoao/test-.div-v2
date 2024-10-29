@@ -6,9 +6,11 @@
 
 body {
     font-family: Montserrat, sans-serif;
+    user-select: none;
     display: flex;
     justify-content: center;
     align-items: center;
+    min-height: 100vh;
 }
 
 ul {
@@ -29,7 +31,6 @@ button {
     font-weight: 800;
     line-height: 58.51px;
     letter-spacing: -0.9px;
-    margin-top: 82px;
     margin-bottom: 20px;
 }
 
@@ -39,7 +40,7 @@ button {
     height: 528px;
     padding: 40px;
     border-radius: 20px;
-    margin-bottom: 43px;
+    margin-bottom: 43.1px;
 }
 
 .test__questions-answers {
@@ -55,12 +56,11 @@ button {
 .test__options-list {
     display: flex;
     flex-direction: column;
-    gap: 23px;
+    gap: 12px;
 }
 
 .test__options-item {
     display: flex;
-    align-items: center;
 }
 
 .test__options-item:not(:last-child) {
@@ -72,7 +72,7 @@ button {
     height: 20px;
     border: 2px solid #3300FF;
     border-radius: 999px;
-    margin-right: 10px;
+    margin-right: 20px;
     transition: background-color 0.3s;
     cursor: pointer;
 }
@@ -158,6 +158,10 @@ button {
     right: 0;
 }
 
+.result {
+    display: none;
+}
+
 .result__title {
     font-size: 48px;
     font-weight: 800;
@@ -225,27 +229,25 @@ button {
     color: #FFFFFF;
     border: none;
     border-radius: 10px;
-    margin-bottom: 80px;
+    margin-bottom: 40px;
     cursor: pointer;
 }
 
 @media (max-width: 1024px) {
     .test__title {
         font-size: 36px;
-        line-height: 46px;
-        margin-top: 50px;
     }
 
     .test__content {
         width: 600px;
         height: 100%;
         padding: 32px;
-        margin-bottom: 32px;
+        margin-bottom: 16px;
     }
 
     .test__question {
         font-size: 18px;
-        margin-bottom: 16px;
+        margin-bottom: 20px;
     }
 
     .test__option-button {
@@ -282,6 +284,7 @@ button {
 
     .result__correct {
         width: 600px;
+        gap: 14px;
     }
 
     .result__box {
@@ -304,7 +307,7 @@ button {
         width: 160px;
         height: 40px;
         font-size: 14px;
-        margin-bottom: 50px;
+        margin-bottom: 40px;
         padding: 0;
     }
 }
@@ -312,8 +315,6 @@ button {
 @media (max-width: 768px) {
     .test__title {
         font-size: 32px;
-        line-height: 42px;
-        margin-top: 40px;
     }
 
     .test__content {
@@ -325,7 +326,7 @@ button {
 
     .test__question {
         font-size: 16px;
-        margin-bottom: 16px;
+        margin-bottom: 20px;
     }
 
     .test__option-button {
@@ -349,19 +350,20 @@ button {
     }
 
     .result__title {
-        font-size: 32px;
-        line-height: 42px;
-        margin-top: 40px;
+        font-size: 28px;
+        line-height: 38px;
+        margin-top: 36px;
     }
 
     .result__answer {
-        font-size: 16px;
-        line-height: 24px;
-        margin-bottom: 20px;
+        font-size: 14px;
+        line-height: 22px;
+        margin-bottom: 18px;
     }
 
     .result__correct {
         width: 500px;
+        gap: 12px;
     }
 
     .result__box {
@@ -384,7 +386,87 @@ button {
         width: 140px;
         height: 38px;
         font-size: 12px;
-        margin-bottom: 40px;
+        margin-bottom: 30px;
+        padding: 0;
+    }
+}
+
+@media (max-width: 450px) {
+    .test__title {
+        font-size: 28px;
+    }
+
+    .test__content {
+        width: 350px;
+        height: 100%;
+        padding: 28px;
+        margin-bottom: 28px;
+    }
+
+    .test__question {
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+
+    .test__option-button {
+        font-size: 12px;
+    }
+
+    .test__progress-bar {
+        min-height: 12px;
+    }
+
+    .test__progress-question-number {
+        top: 14px;
+        font-size: 10px;
+        transform: translateX(-7px);
+    }
+
+    .test__progress-bar-start,
+    .test__progress-bar-end {
+        top: -14px;
+        font-size: 10px;
+    }
+
+    .result__title {
+        font-size: 24px;
+        line-height: 20px;
+        margin-top: 32px;
+    }
+
+    .result__answer {
+        font-size: 12px;
+        line-height: 20px;
+        margin-bottom: 20px;
+    }
+
+    .result__correct {
+        width: 350px;
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+
+    .result__box {
+        width: 350px;
+        height: 80px;
+        padding: 18px 18px;
+    }
+
+    .result__question {
+        font-size: 12px;
+        margin-bottom: 6px;
+    }
+
+    .result__selected {
+        font-size: 8px;
+        line-height: 14px;
+    }
+
+    .result__restart {
+        width: 140px;
+        height: 38px;
+        font-size: 12px;
+        margin-bottom: 20px;
         padding: 0;
     }
 }

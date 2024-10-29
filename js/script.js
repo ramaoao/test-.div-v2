@@ -7,6 +7,8 @@ const restartButton = document.querySelector('.result__restart');
 const questionNumber = document.querySelector('.test__progress-question-number');
 const testContent = document.querySelector('.test__content');
 const testTitle = document.querySelector('.test__title');
+const result = document.querySelector('.result');
+let circlesClick;
 let optionButtons;
 
 let activeQuestionIdx = 0;
@@ -127,7 +129,7 @@ function displayQuestion() {
         button.addEventListener('click', checkingAnswers);
     });
 
-    const circlesClick = document.querySelectorAll('.test__circle');
+    circlesClick = document.querySelectorAll('.test__circle');
     circlesClick.forEach(circle => {
         circle.addEventListener('click', (event) => {
             const button = event.target.nextElementSibling;
@@ -176,8 +178,12 @@ function checkingAnswers(event) {
     });
 
     optionButtons.forEach(button => {
-        button.removeEventListener('click', checkingAnswers);
+        button.style.pointerEvents = 'none';
     });
+
+    circlesClick.forEach(circle => {
+        circle.style.pointerEvents = 'none';
+    })
 
     activeQuestionIdx++
     
@@ -198,6 +204,7 @@ function displayResults() {
     testContent.classList.add('hidden');
     testTitle.classList.add('hidden');
     restartButton.classList.remove('hidden');
+    result.style.display = 'block';
     
     resultMessage = '';
     if (numPoints === testData.length) {
